@@ -19,19 +19,20 @@
     </div>
   </div>
   <br>
-  <div class="p-4" align="center">
-    <h1><ins>BEST GIOCATORI</ins></h1>
-      <div class="d-flex justify-content-center mt-5">
-        <div class="card" style="width:300px">
-          <img class="card-img-top" src="assets/img/fortnitelogo.png" alt="Card image">
-          <div class="card-body">
-            <h4 class="card-title">Rafael Leao</h4>
-            <p class="card-text">Nato il 10 giugno 1999, è un giocatore di calcio professionista che gioca nel Milan</p>
-            <button data-bs-toggle="collapse" data-bs-target="#demo">INFO</button>
-              <div id="demo" class="collapse">
-                  La star di questa squadra, gioca ala sinistra ed è sempre l'uomo più pericoloso.
-              </div>
+    <div class="p-4" align="center">
+      <h1><ins>BEST GIOCATORI</ins></h1>
+      <div *ngFor="let element of persone index as i">
+        <div class="d-flex justify-content-center mt-5">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="{{element.img}}" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">{{element.Nome_Utente}}</h4>
+              <p class="card-text">Età: {{element.eta}}</p>
+              <p class="card-text">Nazionalita: {{element.Nazionalita}}</p>
+              <p class="card-text">Ruolo: {{element.ruolo}}</p>
+              <button data-bs-toggle="collapse" data-bs-target="#demo">LINK</button>
+            </div>
           </div>
         </div>
-      </div>
+    </div>
   </div>
