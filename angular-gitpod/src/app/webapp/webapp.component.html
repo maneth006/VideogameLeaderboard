@@ -21,15 +21,58 @@
   <br>
     <div class="p-4" align="center">
       <h1><ins>BEST GIOCATORI</ins></h1>
-      <div *ngFor="let element of persone index as i">
+      <div *ngFor="let element of persone index as i" >
         <div class="d-flex justify-content-center mt-5">
-          <div class="card" style="width:300px">
+          <div class="card" style="width:300px" [ngClass]="{'bg-danger': element.ruolo === 'Pompa' , 'bg-info': element.ruolo === 'Scar' , 'bg-success': element.ruolo === 'Mitraglietta'}">
             <img class="card-img-top" src="{{element.img}}" alt="Card image">
             <div class="card-body">
               <h4 class="card-title">{{element.Nome_Utente}}</h4>
               <p class="card-text">Età: {{element.eta}}</p>
-              <p class="card-text">Nazionalita: {{element.Nazionalita}}</p>
-              <p class="card-text">Ruolo: {{element.ruolo}}</p>
+              <div [ngSwitch]="element.Nazionalita">
+                <p *ngSwitchCase="'USA'">               
+                  <a class="ui label">
+                    <img class="ui right spaced avatar image" src="assets/img/USA.png" width="60px" height="40px">
+                  </a>
+                </p>
+               
+                <p *ngSwitchCase="'Serbia'">               
+                  <a class="ui label">
+                    <img class="ui right spaced avatar image" src="assets/img/serbia.png" width="60px" height="40px">
+                  </a>
+                </p> 
+               
+                <p *ngSwitchCase="'England'">               
+                  <a class="ui label">
+                    <img class="ui right spaced avatar image" src="assets/img/England.png" width="60px" height="40px">
+                  </a>
+                </p>
+               
+                <p *ngSwitchCase="'Poland'">               
+                  <a class="ui label">
+                    <img class="ui right spaced avatar image" src="assets/img/Poland.png" width="60px" height="40px">
+                  </a>
+                </p>
+               
+                <p *ngSwitchCase="'Russia'">               
+                  <a class="ui label">
+                    <img class="ui right spaced avatar image" src="assets/img/Russia.png" width="60px" height="40px">
+                  </a>
+                </p>
+
+                <p *ngSwitchCase="'Latvia'">               
+                  <a class="ui label">
+                    <img class="ui right spaced avatar image" src="assets/img/Latvia.png" width="60px" height="40px">
+                  </a>
+                </p>
+
+                <p *ngSwitchCase="'Norway'">               
+                  <a class="ui label">
+                    <img class="ui right spaced avatar image" src="assets/img/Norway.png" width="60px" height="40px">
+                  </a>
+                </p>
+                <p *ngSwitchDefault>default</p>
+               </div>
+              <p class="card-text">Arma preferita: {{element.ruolo}}</p>
               <button data-bs-toggle="collapse" data-bs-target="#demo">LINK</button>
             </div>
           </div>
