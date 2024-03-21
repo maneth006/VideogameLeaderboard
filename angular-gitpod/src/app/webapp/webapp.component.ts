@@ -32,4 +32,8 @@ export class WebappComponent {
     {Nome_Utente: "Clix", Nazionalita: "USA", eta: "19", ruolo: "Pompa", colore: "rgb(255, 255, 0)", img: "assets/img/Clix.png", link: "https://fortnite-esports.fandom.com/wiki/Clix"},
  
   ]
+
+  onClick(link: string){
+    window.open(link, '_blank')
+  }
 }

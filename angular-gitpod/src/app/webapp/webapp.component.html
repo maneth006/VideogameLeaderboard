@@ -73,7 +73,7 @@
                 <p *ngSwitchDefault>default</p>
                </div>
               <p class="card-text">Arma preferita: {{element.ruolo}}</p>
-              <button data-bs-toggle="collapse" data-bs-target="#demo">LINK</button>
+              <button data-bs-toggle="collapse" data-bs-target="#demo" (click)="onClick(element.link)">LINK</button>
             </div>
           </div>
         </div>
